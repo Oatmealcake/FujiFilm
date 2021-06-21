@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>후지필름</title>
+  <link rel="shortcut icon" href="./img/favicon.ico">
+  <link rel="icon" href="./img/favicon.ico">
+  <link rel="stylesheet" href="./css/web-font.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+  <script defer src="./js/common.js"></script>
+</head>
+<body>
+<div id="wrap">
+  <header class="main_header">
+    <div class="header_wrap">
+      <h1 class="h_logo">
+        <a href="#">
+          <svg class="fuji_logo" viewBox="0 0 144 40" role="img">
+            <!-- <desc>FujiFilm - Value from Innovation</desc> -->
+            <path fill="#231f20" d="M109.69 0v18.76a1.7 1.7 0 001.83 1.91h6.18v2.1a.36.36 0 01-.39.4h-10c-3.09 0-3.55-1.7-3.55-3.25V1.28c0-.88.33-1.3 1.37-1.28h4.56M98.16 0v22c0 1-.41 1.22-1.24 1.22h-4.7v-22c0-.73.28-1.22 1.33-1.22h4.61M0 3.2C0 1.43 0 0 2.9 0h12.76v2.23a.27.27 0 01-.3.3H7.72a1.35 1.35 0 00-1.55 1.53v5.88h9v2.34a.29.29 0 01-.33.31H6.17v9.34c0 .9-.46 1.26-1.45 1.24H0V3.2M24.87 0v17.66c0 1.52.22 2.58 1.28 3.19a6 6 0 005.3 0c1-.56 1.37-1.45 1.37-3.21V1.18c0-.75.28-1.18 1.32-1.18h4.61v17.14A6 6 0 0134 23.36a21.62 21.62 0 01-10.21 0c-3.32-1-4.87-3-4.88-6.2V1.19C18.94.42 19.21 0 20.1 0h4.77M137.14 0A2 2 0 00135 1.59l-3.78 16h-.1L127.25 0h-5.34c-1 0-1.36.53-1.36 1.35v21.82h2.26c.36 0 .51-.18.51-.55V4.33h.36l4.82 18.84h3.17c1.19 0 1.63-.49 1.92-1.67l4.34-17.17h.35v18.84h4.21c1 0 1.51-.4 1.51-1.42V0h-6.86M67 12.59h-6v10.58h4.69c.83 0 1.24-.24 1.24-1.22v-9.36"></path>
+            <path fill="#ed1a3b" d="M66.62 8.07a.75.75 0 00.38-.66V0h-4.65C61.32 0 61 .51 61 1.23v11.22l5.59-4.38"></path>
+            <path fill="#231f20" d="M46.27 21.34c2.58-.37 3.43-1.9 3.43-4.15V1.26c0-.95.52-1.26 1.18-1.26h4.76v15.06c0 3.7-.78 5.57-3 7.15C51.52 23 49.53 24 45.2 24a26.66 26.66 0 01-3.72-.17.34.34 0 01-.3-.36v-1.98a34.41 34.41 0 005.09-.15M76 0c-2.9 0-2.91 1.43-2.91 3.2v6a.27.27 0 01-.1.22l-4.07 3.2h4.17v10.55h4.72c1 0 1.44-.34 1.45-1.24v-9.34h8.67a.29.29 0 00.33-.31V9.94h-9V4.06a1.35 1.35 0 011.54-1.53h7.64a.27.27 0 00.3-.3V0H76M7.4 30.12l2.78 6.13 2.57-6.13h1.33l-3.64 8.67a.55.55 0 01-.51.34h-.6l-3.91-8.68a.23.23 0 01.22-.33H7.4M23 38.63a.38.38 0 01-.37.37h-1.55v-9.48a.37.37 0 01.37-.37H23v9.48M76 30.49a.36.36 0 01.37-.37H78v8.51a.38.38 0 01-.37.37H76v-8.51M103.48 32.18l1.85 4.2 1.89-4.2h1.32l-3 6.63a.57.57 0 01-.52.34h-.51l-2.92-6.63a.24.24 0 01.22-.34h1.65M121.35 32.67a.37.37 0 01.37-.36h1.55v6.32a.37.37 0 01-.36.37h-1.56v-6.33M51.43 32.15a2.91 2.91 0 00-1.68.72v-.56H48.2a.36.36 0 00-.36.36V39h1.55a.37.37 0 00.36-.37V34.1a2 2 0 012.83-.1v-1.56a1.68 1.68 0 00-1.15-.29zM16.82 32.15c2.13 0 2.61 1 2.61 1.83v4.65a.37.37 0 01-.37.37H17.5v-.58a2.67 2.67 0 01-1.83.71 1.84 1.84 0 01-2-1.84c0-1.79 2.24-2.46 3.82-2.88a3 3 0 00-.12-1c-.1-.33-.54-.43-.73-.43a6.53 6.53 0 00-2.5.62v-.9a8.62 8.62 0 012.68-.55zm.68 5.32v-2.19c-1.33.43-1.88 1.25-1.88 1.84a.82.82 0 00.73.9 1.41 1.41 0 001.15-.55zM46.14 30.4a3.58 3.58 0 011.32.17v-.86a5.86 5.86 0 00-1.46-.19c-.81 0-2.6.33-2.6 1.91v.88h-1.28v.81h1.25V39h1.55a.37.37 0 00.36-.37v-5.51h1.58v-.81h-1.58v-.45a2.12 2.12 0 01.12-.95 1 1 0 01.74-.51zM34.85 39.15a3.32 3.32 0 01-3.26-3.28c0-2.32 1.48-3.7 3.33-3.68s3 1.43 2.95 3.33h-4.39c0 .91.21 2.3 1.7 2.3A2 2 0 0037 36.43h1a2.83 2.83 0 01-.82 1.63 3.42 3.42 0 01-2.33 1.09zm.81-4.33c0-1.42-.56-1.81-1.14-1.81-.9 0-1 1.23-1 1.81zM60 35.52a3.53 3.53 0 01-3.51 3.6 3.48 3.48 0 113.51-3.6zM56.18 33c-.65.11-1.46 1.11-1 3.4.27 1.5 1 1.93 1.54 1.93s1.21-.81 1.21-2.2c-.04-2.85-1.24-3.24-1.75-3.13zM101.2 35.52a3.53 3.53 0 01-3.51 3.6 3.48 3.48 0 113.51-3.6zM97.42 33c-.65.11-1.47 1.11-1 3.4.27 1.5 1 1.93 1.55 1.93s1.21-.81 1.21-2.2c-.05-2.85-1.26-3.24-1.76-3.13zM131.59 35.52a3.53 3.53 0 01-3.51 3.6 3.48 3.48 0 113.51-3.6zM127.81 33c-.65.11-1.46 1.11-1 3.4.27 1.5 1 1.93 1.55 1.93s1.21-.81 1.21-2.2c-.05-2.85-1.26-3.24-1.76-3.13zM123.37 30.63a1.05 1.05 0 11-1.05-1.05 1 1 0 011.05 1.05zM26.53 32.31V37a.94.94 0 00.93.94c.33 0 .76-.4 1-.83v-4.44a.37.37 0 01.37-.36h1.56v6.32A.38.38 0 0130 39h-1.52v-.63a3.46 3.46 0 01-.8.55 2.06 2.06 0 01-.84.2A2.15 2.15 0 0124.61 37v-4.33a.37.37 0 01.37-.36h1.55M134.71 34.1a2.46 2.46 0 011.33-.74c.39 0 .64.44.64 1V39h1.55a.37.37 0 00.37-.37v-4.42a2 2 0 00-1.93-2 3.18 3.18 0 00-2 .66v-.52h-1.57a.36.36 0 00-.36.36V39h1.56a.38.38 0 00.37-.37zM89.12 34.1a2.46 2.46 0 011.34-.74c.38 0 .63.44.63 1V39h1.56a.37.37 0 00.36-.37v-4.42a2 2 0 00-1.93-2 3.18 3.18 0 00-2 .66v-.52h-1.53a.36.36 0 00-.36.36V39h1.56a.38.38 0 00.37-.37zM81.82 34.1a2.46 2.46 0 011.34-.74c.38 0 .63.44.63 1V39h1.56a.37.37 0 00.36-.37v-4.42a2 2 0 00-1.93-2 3.18 3.18 0 00-2 .66v-.52h-1.53a.36.36 0 00-.36.36V39h1.56a.38.38 0 00.37-.37zM69 32.17a3.68 3.68 0 00-2.27.84 2 2 0 00-1.64-.84 3.18 3.18 0 00-2 .66v-.52h-1.57a.36.36 0 00-.36.36V39h1.56a.38.38 0 00.37-.37V34.1a2.46 2.46 0 011.34-.74c.38 0 .63.44.63 1V39h1.57a.37.37 0 00.36-.37V34.1a2.5 2.5 0 011.34-.74c.39 0 .64.44.64 1V39h1.55a.38.38 0 00.37-.37v-4.42A2 2 0 0069 32.17zM111.6 38a.81.81 0 01-.73-.9c0-.59.55-1.41 1.88-1.84v2.19a1.43 1.43 0 01-1.15.55zm-2.2-5.32v.94a6.48 6.48 0 012.5-.62c.18 0 .63.1.72.43a2.74 2.74 0 01.12 1c-1.57.42-3.81 1.09-3.81 2.88a1.84 1.84 0 002 1.84 2.67 2.67 0 001.83-.71V39h1.56a.38.38 0 00.37-.37V34c0-.83-.48-1.83-2.61-1.83a8.62 8.62 0 00-2.68.53zM116.57 32.29v-1.75a.37.37 0 01.37-.36h1.58v2.11h1.56v.83h-1.56v4.32a.58.58 0 00.1.35.45.45 0 00.4.15 1.79 1.79 0 001.09-.48v1a3.16 3.16 0 01-1.92.73 1.49 1.49 0 01-1.59-1.65v-4.42h-1v-.83h1"></path>
+          </svg>
+          <span class="hr_hidden">FujiFilm - Value from Innovation</span>
+        </a>
+      </h1>
+      <h2 class="hr_hidden">메인메뉴</h2>
+      <button class="btn_ham"><span class="ham_line"></span><span class="hr_hidden">메뉴 열기/닫기</span></button>
+      <div class="nav_wrap">
+        <strong class="nav_logo">
+          <a href="#">
+            <svg class="fuji_logo" viewBox="0 0 144 40" role="img">
+              <path fill="#231f20" d="M109.69 0v18.76a1.7 1.7 0 001.83 1.91h6.18v2.1a.36.36 0 01-.39.4h-10c-3.09 0-3.55-1.7-3.55-3.25V1.28c0-.88.33-1.3 1.37-1.28h4.56M98.16 0v22c0 1-.41 1.22-1.24 1.22h-4.7v-22c0-.73.28-1.22 1.33-1.22h4.61M0 3.2C0 1.43 0 0 2.9 0h12.76v2.23a.27.27 0 01-.3.3H7.72a1.35 1.35 0 00-1.55 1.53v5.88h9v2.34a.29.29 0 01-.33.31H6.17v9.34c0 .9-.46 1.26-1.45 1.24H0V3.2M24.87 0v17.66c0 1.52.22 2.58 1.28 3.19a6 6 0 005.3 0c1-.56 1.37-1.45 1.37-3.21V1.18c0-.75.28-1.18 1.32-1.18h4.61v17.14A6 6 0 0134 23.36a21.62 21.62 0 01-10.21 0c-3.32-1-4.87-3-4.88-6.2V1.19C18.94.42 19.21 0 20.1 0h4.77M137.14 0A2 2 0 00135 1.59l-3.78 16h-.1L127.25 0h-5.34c-1 0-1.36.53-1.36 1.35v21.82h2.26c.36 0 .51-.18.51-.55V4.33h.36l4.82 18.84h3.17c1.19 0 1.63-.49 1.92-1.67l4.34-17.17h.35v18.84h4.21c1 0 1.51-.4 1.51-1.42V0h-6.86M67 12.59h-6v10.58h4.69c.83 0 1.24-.24 1.24-1.22v-9.36"></path>
+              <path fill="#ed1a3b" d="M66.62 8.07a.75.75 0 00.38-.66V0h-4.65C61.32 0 61 .51 61 1.23v11.22l5.59-4.38"></path>
+              <path fill="#231f20" d="M46.27 21.34c2.58-.37 3.43-1.9 3.43-4.15V1.26c0-.95.52-1.26 1.18-1.26h4.76v15.06c0 3.7-.78 5.57-3 7.15C51.52 23 49.53 24 45.2 24a26.66 26.66 0 01-3.72-.17.34.34 0 01-.3-.36v-1.98a34.41 34.41 0 005.09-.15M76 0c-2.9 0-2.91 1.43-2.91 3.2v6a.27.27 0 01-.1.22l-4.07 3.2h4.17v10.55h4.72c1 0 1.44-.34 1.45-1.24v-9.34h8.67a.29.29 0 00.33-.31V9.94h-9V4.06a1.35 1.35 0 011.54-1.53h7.64a.27.27 0 00.3-.3V0H76M7.4 30.12l2.78 6.13 2.57-6.13h1.33l-3.64 8.67a.55.55 0 01-.51.34h-.6l-3.91-8.68a.23.23 0 01.22-.33H7.4M23 38.63a.38.38 0 01-.37.37h-1.55v-9.48a.37.37 0 01.37-.37H23v9.48M76 30.49a.36.36 0 01.37-.37H78v8.51a.38.38 0 01-.37.37H76v-8.51M103.48 32.18l1.85 4.2 1.89-4.2h1.32l-3 6.63a.57.57 0 01-.52.34h-.51l-2.92-6.63a.24.24 0 01.22-.34h1.65M121.35 32.67a.37.37 0 01.37-.36h1.55v6.32a.37.37 0 01-.36.37h-1.56v-6.33M51.43 32.15a2.91 2.91 0 00-1.68.72v-.56H48.2a.36.36 0 00-.36.36V39h1.55a.37.37 0 00.36-.37V34.1a2 2 0 012.83-.1v-1.56a1.68 1.68 0 00-1.15-.29zM16.82 32.15c2.13 0 2.61 1 2.61 1.83v4.65a.37.37 0 01-.37.37H17.5v-.58a2.67 2.67 0 01-1.83.71 1.84 1.84 0 01-2-1.84c0-1.79 2.24-2.46 3.82-2.88a3 3 0 00-.12-1c-.1-.33-.54-.43-.73-.43a6.53 6.53 0 00-2.5.62v-.9a8.62 8.62 0 012.68-.55zm.68 5.32v-2.19c-1.33.43-1.88 1.25-1.88 1.84a.82.82 0 00.73.9 1.41 1.41 0 001.15-.55zM46.14 30.4a3.58 3.58 0 011.32.17v-.86a5.86 5.86 0 00-1.46-.19c-.81 0-2.6.33-2.6 1.91v.88h-1.28v.81h1.25V39h1.55a.37.37 0 00.36-.37v-5.51h1.58v-.81h-1.58v-.45a2.12 2.12 0 01.12-.95 1 1 0 01.74-.51zM34.85 39.15a3.32 3.32 0 01-3.26-3.28c0-2.32 1.48-3.7 3.33-3.68s3 1.43 2.95 3.33h-4.39c0 .91.21 2.3 1.7 2.3A2 2 0 0037 36.43h1a2.83 2.83 0 01-.82 1.63 3.42 3.42 0 01-2.33 1.09zm.81-4.33c0-1.42-.56-1.81-1.14-1.81-.9 0-1 1.23-1 1.81zM60 35.52a3.53 3.53 0 01-3.51 3.6 3.48 3.48 0 113.51-3.6zM56.18 33c-.65.11-1.46 1.11-1 3.4.27 1.5 1 1.93 1.54 1.93s1.21-.81 1.21-2.2c-.04-2.85-1.24-3.24-1.75-3.13zM101.2 35.52a3.53 3.53 0 01-3.51 3.6 3.48 3.48 0 113.51-3.6zM97.42 33c-.65.11-1.47 1.11-1 3.4.27 1.5 1 1.93 1.55 1.93s1.21-.81 1.21-2.2c-.05-2.85-1.26-3.24-1.76-3.13zM131.59 35.52a3.53 3.53 0 01-3.51 3.6 3.48 3.48 0 113.51-3.6zM127.81 33c-.65.11-1.46 1.11-1 3.4.27 1.5 1 1.93 1.55 1.93s1.21-.81 1.21-2.2c-.05-2.85-1.26-3.24-1.76-3.13zM123.37 30.63a1.05 1.05 0 11-1.05-1.05 1 1 0 011.05 1.05zM26.53 32.31V37a.94.94 0 00.93.94c.33 0 .76-.4 1-.83v-4.44a.37.37 0 01.37-.36h1.56v6.32A.38.38 0 0130 39h-1.52v-.63a3.46 3.46 0 01-.8.55 2.06 2.06 0 01-.84.2A2.15 2.15 0 0124.61 37v-4.33a.37.37 0 01.37-.36h1.55M134.71 34.1a2.46 2.46 0 011.33-.74c.39 0 .64.44.64 1V39h1.55a.37.37 0 00.37-.37v-4.42a2 2 0 00-1.93-2 3.18 3.18 0 00-2 .66v-.52h-1.57a.36.36 0 00-.36.36V39h1.56a.38.38 0 00.37-.37zM89.12 34.1a2.46 2.46 0 011.34-.74c.38 0 .63.44.63 1V39h1.56a.37.37 0 00.36-.37v-4.42a2 2 0 00-1.93-2 3.18 3.18 0 00-2 .66v-.52h-1.53a.36.36 0 00-.36.36V39h1.56a.38.38 0 00.37-.37zM81.82 34.1a2.46 2.46 0 011.34-.74c.38 0 .63.44.63 1V39h1.56a.37.37 0 00.36-.37v-4.42a2 2 0 00-1.93-2 3.18 3.18 0 00-2 .66v-.52h-1.53a.36.36 0 00-.36.36V39h1.56a.38.38 0 00.37-.37zM69 32.17a3.68 3.68 0 00-2.27.84 2 2 0 00-1.64-.84 3.18 3.18 0 00-2 .66v-.52h-1.57a.36.36 0 00-.36.36V39h1.56a.38.38 0 00.37-.37V34.1a2.46 2.46 0 011.34-.74c.38 0 .63.44.63 1V39h1.57a.37.37 0 00.36-.37V34.1a2.5 2.5 0 011.34-.74c.39 0 .64.44.64 1V39h1.55a.38.38 0 00.37-.37v-4.42A2 2 0 0069 32.17zM111.6 38a.81.81 0 01-.73-.9c0-.59.55-1.41 1.88-1.84v2.19a1.43 1.43 0 01-1.15.55zm-2.2-5.32v.94a6.48 6.48 0 012.5-.62c.18 0 .63.1.72.43a2.74 2.74 0 01.12 1c-1.57.42-3.81 1.09-3.81 2.88a1.84 1.84 0 002 1.84 2.67 2.67 0 001.83-.71V39h1.56a.38.38 0 00.37-.37V34c0-.83-.48-1.83-2.61-1.83a8.62 8.62 0 00-2.68.53zM116.57 32.29v-1.75a.37.37 0 01.37-.36h1.58v2.11h1.56v.83h-1.56v4.32a.58.58 0 00.1.35.45.45 0 00.4.15 1.79 1.79 0 001.09-.48v1a3.16 3.16 0 01-1.92.73 1.49 1.49 0 01-1.59-1.65v-4.42h-1v-.83h1"></path>
+            </svg>
+            <span class="hr_hidden">FujiFilm - Value from Innovation</span>
+          </a>
+        </strong>
+        <ul class="cs_list">
+          <li class="list_item">
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="cs_svg" focusable="false" aria-hidden="true"><path d="M17.85 15.53a6.37 6.37 0 10-9.28-5.69 6.35 6.35 0 003.58 5.69 11.38 11.38 0 00-8.65 11h1a10.46 10.46 0 0120.92 0h1a11.38 11.38 0 00-8.57-11zM9.61 9.84A5.39 5.39 0 1115 15.16a5.36 5.36 0 01-5.39-5.32z"></path></svg>
+              <span>로그인</span>
+            </a>
+          </li>
+          <li class="list_item">
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="cs_svg" focusable="false" aria-hidden="true"><path d="M21 8.88A5.39 5.39 0 0019.17 5 5.61 5.61 0 0015 3.5 5.61 5.61 0 0010.83 5a5.42 5.42 0 00-1.78 3.88H4V26.5h22V8.88zm-9.23-3A4.4 4.4 0 0115 4.78a4.4 4.4 0 013.28 1.11 4.28 4.28 0 011.4 3h-9.36a4.28 4.28 0 011.4-3zm13.04 19.53H5.19V10H9v1.69a.64.64 0 00.64.64.64.64 0 00.63-.64V10h9.46v1.69a.64.64 0 00.63.64.64.64 0 00.64-.64V10h3.81z"></path></svg>
+              <span>장바구니</span>
+            </a>
+          </li>
+          <li class="list_item">
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="cs_svg" focusable="false" aria-hidden="true"><path d="M22.51 11a.61.61 0 01-.61.61H8.1a.61.61 0 110-1.21h13.8a.6.6 0 01.61.6zm-4.65 3.9H8.11a.62.62 0 00-.62.61.61.61 0 00.62.6h9.75a.61.61 0 00.62-.6.62.62 0 00-.62-.61zm9.14-7v10.69a4 4 0 01-4.07 3.91H11.55l-4.07 3.36a.6.6 0 01-.63.09.57.57 0 01-.36-.53v-2.96h-.08A4 4 0 013 18.59V7.91A4 4 0 017.07 4h15.86A4 4 0 0127 7.91zm-1.2 0a2.81 2.81 0 00-2.87-2.75H7.07A2.81 2.81 0 004.2 7.91v10.68a2.82 2.82 0 002.87 2.75.58.58 0 01.6.57v2.25l3.25-2.69a.68.68 0 01.39-.13h11.6a2.82 2.82 0 002.87-2.75z"></path></svg>
+              <span>고객지원</span>
+            </a>
+          </li>
+        </ul>
+        <nav class="gnb">
+          <ul class="gnb_list">
+            <li class="list_item dropdown">
+              <a href="#" class="gnb_tit">PRODUCTS</a>
+              <div class="sub_wrap">
+                <strong class="gnb_sub_tit">products</strong>
+                <ul class="gnb_sub">
+                  <li><a href="#" class="sub_tit"><span class="link_text">신제품</span></a></li>
+                  <li><a href="#" class="sub_tit"><span class="link_text">프로모션</span></a></li>
+                  <li><a href="#" class="sub_tit"><span class="link_text">카메라</span></a></li>
+                  <li><a href="#" class="sub_tit"><span class="link_text">렌즈</span></a></li>
+                  <li><a href="#" class="sub_tit"><span class="link_text">액세서리</span></a></li>
+                  <li><a href="#" class="sub_tit"><span class="link_text">프로젝터</span></a></li>
+                </ul>
+                <a href="#" class="gnb_sub_banner">
+                  <img class="banner_img" src="./img/gnb-banner1.jpg" alt="">
+                  <span class="banner_desc link_text"><b class="model">X-E4</b><br>make MORE with LESS</span>
+                  <span class="banner_deco"><span class="deco_box"></span></span>
+                </a>
+              </div>
+            </li>
+            <li class="list_item dropdown">
+              <a href="#" class="gnb_tit">PARTICLE</a>
+              <div class="sub_wrap">
+                <strong class="gnb_sub_tit">PARTICLE</strong>
+                <ul class="gnb_sub">
+                  <li><a href="#" class="sub_tit"><span class="link_text">공간소개</span></a></li>
+                  <li><a href="#" class="sub_tit"><span class="link_text">전시</span></a></li>
+                  <li><a href="#" class="sub_tit"><span class="link_text">프로그램</span></a></li>
+                  <li><a href="#" class="sub_tit"><span class="link_text">라이브러리</span></a></li>
+                </ul>
+                <a href="#" class="gnb_sub_banner">
+                  <img class="banner_img" src="./img/gnb-banner2.jpg" alt="">
+                  <span class="banner_desc link_text">Cultural Platform<br>Beyond Photography</span>
+                  <span class="banner_deco"><span class="deco_box"></span></span>
+                </a>
+              </div>
+            </li>
+            <li class="list_item">
+              <a href="#" class="gnb_tit">#PLAYWITH</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="place_search">
+          <a href="#" class="search_link"><span class="search_text">가까운 매장/서비스센터 찾기</span></a>
+        </div>
+      </div>
+      <ul class="cs_list">
+        <li class="list_item item_text"><a href="" class="link_text">고객지원</a></li>
+        <li class="list_item item_text"><a href="" class="link_text">로그인</a></li>
+        <li class="list_item item_icon search">
+          <button type="button" class="icon_link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+              <path d="M25.13 23.86l-5.86-5.76h-.06a8.27 8.27 0 002.3-5.7 8.51 8.51 0 00-17 0A8.44 8.44 0 0013 20.72a8.57 8.57 0 004.27-1.14 1.12 1.12 0 00.19.29l5.86 5.76a1.29 1.29 0 001.81 0 1.25 1.25 0 000-1.77zM5.67 12.36a7.34 7.34 0 0114.67 0 7.34 7.34 0 01-14.67 0z"></path>
+            </svg>
+            <span class="hr_hidden">검색</span>
+          </button>
+          <div class="search_box">
+            <form method="post" class="search_form">
+              <label for="search" class="hr_hidden">검색창</label>
+              <input id="search" type="text" class="input_search" placeholder="키워드 입력">
+              <button type="submit" class="btn_submit">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                  <path d="M25.13 23.86l-5.86-5.76h-.06a8.27 8.27 0 002.3-5.7 8.51 8.51 0 00-17 0A8.44 8.44 0 0013 20.72a8.57 8.57 0 004.27-1.14 1.12 1.12 0 00.19.29l5.86 5.76a1.29 1.29 0 001.81 0 1.25 1.25 0 000-1.77zM5.67 12.36a7.34 7.34 0 0114.67 0 7.34 7.34 0 01-14.67 0z"></path>
+                </svg>
+                <span class="hr_hidden">검색</span>
+              </button>
+            </form>
+            <button type="button" class="btn_close">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" focusable="false" aria-hidden="true">
+                <path fill="#0a0a0a" d="M17 .71l-.68-.68-7.8 7.79L.68 0 0 .68 7.83 8.5 0 16.32l.68.68 7.84-7.82 7.8 7.79.68-.68L9.19 8.5 17 .71z"></path>
+              </svg>
+              <span class="hr_hidden">검색창 닫기</span>
+            </button>
+          </div>
+        </li>
+        <li class="list_item item_icon">
+          <a href="" class="icon_link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" focusable="false" aria-hidden="true">
+              <path d="M15 3.5a8.37 8.37 0 00-5.86 2.35 7.79 7.79 0 00-2.43 5.66c-.11 4.57 4 9.92 6.46 13.12.41.53.83 1.08 1.16 1.53a.82.82 0 00.67.34.86.86 0 00.68-.34c.31-.45.72-1 1.16-1.54 2.45-3.2 6.56-8.54 6.45-13.11A8.16 8.16 0 0015 3.5zm.86 20.42c-.32.41-.61.78-.86 1.12-.25-.34-.54-.71-.86-1.12-2.36-3.08-6.32-8.23-6.22-12.41A6.65 6.65 0 0110 6.69a7.16 7.16 0 015-2 7 7 0 017.08 6.84c.09 4.16-3.86 9.31-6.22 12.39zm1.72-12.19A2.58 2.58 0 1115 9.14a2.58 2.58 0 012.58 2.59z"></path>
+          </svg>
+          </a>
+        </li>
+        <li class="list_item item_icon">
+          <a href="" class="icon_link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" focusable="false" aria-hidden="true">
+            <path d="M21 8.88A5.39 5.39 0 0019.17 5 5.61 5.61 0 0015 3.5 5.61 5.61 0 0010.83 5a5.42 5.42 0 00-1.78 3.88H4V26.5h22V8.88zm-9.23-3A4.4 4.4 0 0115 4.78a4.4 4.4 0 013.28 1.11 4.28 4.28 0 011.4 3h-9.36a4.28 4.28 0 011.4-3zm13.04 19.53H5.19V10H9v1.69a.64.64 0 00.64.64.64.64 0 00.63-.64V10h9.46v1.69a.64.64 0 00.63.64.64.64 0 00.64-.64V10h3.81z"></path>
+          </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header> <!-- main_header -->
+  <div class="dimmed_layer"></div>
+  <main class="main_container">
+    <div class="staple_item">
+      <h2 class="hr_hidden">주력상품</h2>
+      <ul class="slide">
+        <li class="slide_item"> <!-- 1 -->
+          <a href="#">
+            <img class="thumb" src="./img/staple-slide-1.jpg" alt="">
+            <span class="slide_cont">
+              <em class="model">FUJIFILM X-E4</em>
+              <span class="desc">make MORE <br class="m_br">with LESS</span>
+            </span>
+          </a>
+        </li>
+        <li class="slide_item"> <!-- 2 -->
+          <a href="#">
+            <img class="thumb" src="./img/staple-slide-2.jpg" alt="">
+            <span class="slide_cont">
+              <em class="model">FUJIFILM GFX100S</em>
+              <span class="desc">모두를 위한 라지 포맷</span>
+            </span>
+          </a>
+        </li>
+        <li class="slide_item"> <!-- 3 -->
+          <a href="#">
+            <img class="thumb" src="./img/staple-slide-3.jpg" alt="">
+            <span class="slide_cont">
+              <em class="model">FUJIFILM X-S10</em>
+              <span class="desc">사진, 영상도<br>카메라에서 바로 완성</span>
+            </span>
+          </a>
+        </li>
+      </ul> <!-- slide -->
+      <div class="controller">
+        <ul class="indicator">
+          <li class="list_item"><a href="#" class="item_link"><span class="hr_hidden">1번 슬라이드</span></a></li>
+          <li class="list_item"><a href="#" class="item_link"><span class="hr_hidden">2번 슬라이드</span></a></li>
+          <li class="list_item"><a href="#" class="item_link"><span class="hr_hidden">3번 슬라이드</span></a></li>
+        </ul>
+        <button type="button" class="btn_control play on"><span class="hr_hidden">슬라이드 재생</span></button>
+        <button type="button" class="btn_control stop"><span class="hr_hidden">슬라이드 멈춤</span></button>
+      </div> <!-- controller -->
+    </div> <!-- staple_item -->
+    <div class="contents">
+      <h2 class="hr_hidden">메인 콘텐츠</h2>
+      <ul class="contents_list contents_aside">
+        <li class="list_item"> <!-- 1 -->
+          <a href="#" class="main_item">
+            <img src="./img/img-aside1.jpg" alt="" class="thumb">
+            <span class="cont">
+              <span class="category">
+                PLAYWITH
+                <span class="date">
+                  <time datetime="2021-06-04">2021.06.04</time>-<time datetime="2021-06-30">2021.06.30</time>
+                </span>
+              </span>
+              <strong class="tit">제1회 XF렌즈 프렌즈 선발대회</strong>
+              <span class="desc">35종의 X마운트 렌즈 중, 여러분이 좋아하는 렌즈는 무엇인가요? 렌즈를 통해 경험할 수 있는 세계를 각자의 방식으로 표현하여 XF렌즈 프렌즈가 되어 보세요!</span>
+            </span>
+          </a> <!-- main_item -->
+        </li>
+        <li class="list_item"> <!-- 2 -->
+          <a href="#" class="main_item">
+            <img src="./img/img-aside2.jpg" alt="" class="thumb">
+            <span class="cont">
+              <span class="category">
+                promotion
+                <span class="date">
+                  <time datetime="2021-06-01">2021.06.01</time>-<time datetime="2021-08-07">2021.08.07</time>
+                </span>
+              </span>
+              <strong class="tit">나다운 사진 취향 렌즈 큐레이션</strong>
+              <span class="desc">나다운 사진을 즐길 수 있는 취향 맞춤 렌즈 큐레이션에 참여하고 캐시백도 받아 가세요.</span>
+            </span>
+          </a> <!-- main_item -->
+        </li>
+        <li class="list_item"> <!-- 3 -->
+          <a href="#" class="main_item">
+            <img src="./img/img-aside3.jpg" alt="" class="thumb">
+            <span class="cont">
+              <span class="category">
+                promotion
+                <span class="date">
+                  <time datetime="2021-06-01">2021.06.01</time>-<time datetime="2021-08-07">2021.08.07</time>
+                </span>
+              </span>
+              <strong class="tit">나도 카메라도 N잡 #X-T4 이벤트</strong>
+              <span class="desc">회사원 x 유튜버 x 사진작가 부캐가 더 이상 취미가 아니니까~! 지루한 일상을 넘어 완벽한 촬영을 위한 멀티 플레이어 미러리스 X-T4를 지금 구매하세요.</span>
+            </span>
+          </a> <!-- main_item -->
+          <div class="related_item">
+            <img src="./img/img-related-camera.jpg" alt="" class="thumb">
+            <span class="cont">
+              <a href="#" class="cont_link">
+                <span class="cate">camera</span> 
+                <i class="model">X-T4</i>
+              </a>
+            </span>
+          </div> <!-- related_item -->
+        </li>
+        <li class="list_item"> <!-- 4 -->
+          <a href="#" class="main_item">
+            <img src="./img/img-aside4.jpg" alt="" class="thumb">
+            <span class="cont">
+              <span class="category">
+                promotion
+                <span class="date">
+                  <time datetime="2021-06-01">2021.06.01</time>-<time datetime="2021-06-30">2021.06.30</time>
+                </span>
+              </span>
+              <strong class="tit">후지필름 홈페이지 6월 이벤트</strong>
+              <span class="desc">사진 찍는 즐거움을! 후지필름이 강력추천하는 6월 이벤트 제품을 만나보세요.</span>
+            </span>
+          </a> <!-- main_item -->
+        </li>
+      </ul> <!-- contents_list -->
+      <ul class="contents_list contents_alone">
+        <li class="list_item"> <!-- 1 -->
+          <a href="#" class="main_item">
+            <img src="./img/img-contents1.jpg" alt="" class="thumb">
+            <span class="cont">
+              <span class="category">
+                promotion
+                <span class="date">
+                  <time datetime="2021-05-27">2021.05.27</time>-<time datetime="2021-06-30">2021.06.30</time>
+                </span>
+              </span>
+              <strong class="tit">무한한 자유를 표현하는 광각 단렌즈 XF18mmF1.4 R LM WR</strong>
+              <span class="desc">왜곡 없는 디테일 표현, 빠른 AF F1.4 조리개로 구현하는 아름다운 보케, 다양한 환경에 대응하는 내후성능, 완벽한 광각 단렌즈를 지금 경험하세요.</span>
+            </span>
+          </a> <!-- main_item -->
+          <div class="related_item">
+            <img src="./img/img-related-lens.jpg" alt="" class="thumb">
+            <span class="cont">
+              <a href="#" class="cont_link">
+                <span class="cate">lens</span> 
+                <i class="model">XF18mmF1.4 R LM WR</i>
+              </a>
+            </span>
+          </div> <!-- related_item -->
+        </li>
+        <li class="list_item"> <!-- 2 -->
+          <a href="#" class="main_item">
+            <img src="./img/img-contents2.jpg" alt="" class="thumb">
+            <span class="cont">
+              <strong class="tit">XF18mmF1.4: 무한한 자유</strong>
+              <span class="desc">웨딩 사진가 Ben Chrisman에게 FUJINON XF18mmF1.4 R LM WR이 우리 삶의 모든 측면을 프레임에 담는 데 완벽한 도구인 이유를 들어보았습니다.</span>
+            </span>
+          </a> <!-- main_item -->
+        </li>
+        <li class="list_item"> <!-- 3 -->
+          <a href="#" class="main_item">
+            <img src="./img/img-contents3.jpg" alt="" class="thumb">
+            <span class="cont">
+              <strong class="tit">X100V PAPER TYPE</strong>
+              <span class="desc">X100V와 완전히 똑같은 모습의 종이피규어를 만나보세요</span>
+            </span>
+          </a> <!-- main_item -->
+        </li>
+        <li class="list_item"> <!-- 4 -->
+          <a href="#" class="main_item">
+            <img src="./img/img-contents4.jpg" alt="" class="thumb">
+            <span class="cont">
+              <strong class="tit">3일 무료체험이 다시 시작됩니다.</strong>
+              <span class="desc">5월1일부터 파티클에서 미러리스카메라와 렌즈를 3일동안 마음껏 체험할 수 있는 '3일무료체험' 이 다시 시작됩니다.</span>
+            </span>
+          </a> <!-- main_item -->
+        </li>
+        <li class="list_item"> <!-- 5 -->
+          <a href="#" class="main_item">
+            <img src="./img/img-contents5.jpg" alt="" class="thumb">
+            <span class="cont">
+              <strong class="tit">GFX100S: "More than Full Frame" x Haze Kware</strong>
+              <span class="desc">프랑스 남서부에 거주하는 공연예술 전문사진가  Haze Kware는 GFX100S를 사용하여 전직 체조선수와 무용수들의 움직임을 담았습니다.</span>
+            </span>
+          </a> <!-- main_item -->
+        </li>
+        <li class="list_item"> <!-- 6 -->
+          <a href="#" class="main_item">
+            <img src="./img/img-contents6.jpg" alt="" class="thumb">
+            <span class="cont">
+              <strong class="tit">GF80mmF1.7 R WR: Opening Night</strong>
+              <span class="desc">광고, 패션, 인물 사진가인 Chris Knight는 FUJINON GF80mmF1.7 R WR을 사용하여 세계에서 가장 유명한 도시의 극장가에서 꿈 같이 영원한 추억을 남기는 로맨틱한 여행을 사진으로 촬영합니다.</span>
+            </span>
+          </a> <!-- main_item -->
+        </li>
+        <li class="list_item"> <!-- 7 -->
+          <a href="#" class="main_item">
+            <img src="./img/img-contents7.jpg" alt="" class="thumb">
+            <span class="cont">
+              <span class="category">
+                promotion
+                <span class="date">
+                  <time datetime="2021-01-25">2021.25.01</time>-<time datetime="2021-12-31">2021.12.31</time>
+                </span>
+              </span>
+              <strong class="tit">후지필름 신규회원 프로모션</strong>
+              <span class="desc">후지필름 홈페이지에 신규 회원가입하신 모든 분께 제품 할인쿠폰을 드립니다.</span>
+            </span>
+          </a> <!-- main_item -->
+        </li>
+      </ul> <!-- contents_list -->
+    </div> <!-- contents -->
+    <div class="service"> 
+      <div class="slogan">
+        <p class="slogan_p">
+          <span class="slogan_text"><img class="text_img" src="./img/sevice-slogan-1.png" alt="VALUE FROM"></span>
+          <span class="slogan_text"><img class="text_img" src="./img/sevice-slogan-2.png" alt="INNOVATION"></span>
+        </p>
+      </div>
+      <div class="cs">
+        <div class="cs_wrap">
+          <h2 class="cs_tit">CUSTOMER CENTER</h2>
+          <p class="cs_desc">후지필름 제품을 사용하시나요?<br>필요한 고객지원 서비스를 바로 찾아보세요.</p>
+          <ul class="cs_list">
+            <li class="list_item"><a href="#" class="item_link">정품등록</a></li>
+            <li class="list_item"><a href="#" class="item_link">A/S 접수</a></li>
+            <li class="list_item"><a href="#" class="item_link">서비스센터</a></li>
+            <li class="list_item"><a href="#" class="item_link">모든고객지원</a></li>
+          </ul>
+        </div>
+        <div class="cs_wrap">
+          <h2 class="cs_tit">MEMBERSHIP</h2>
+          <p class="cs_desc">후지필름이 처음이신가요?<br>다양한 프로모션, 제품 무료체험 등의<br>회원 혜택을 받아보세요.</p>
+          <button type="button" class="cs_btn">회원가입</button>
+        </div>
+      </div>
+    </div> <!-- sevice -->
+  </main> <!-- main_container -->
+  <footer class="main_footer">
+    <div class="footer_wrap">
+      <h2 class="hr_hidden">하단 메뉴</h2>
+      <strong class="f_logo">
+        <a href="#">
+          <svg class="fuji_logo" viewBox="0 0 144 40" role="img">
+            <path fill="#231f20" d="M109.69 0v18.76a1.7 1.7 0 001.83 1.91h6.18v2.1a.36.36 0 01-.39.4h-10c-3.09 0-3.55-1.7-3.55-3.25V1.28c0-.88.33-1.3 1.37-1.28h4.56M98.16 0v22c0 1-.41 1.22-1.24 1.22h-4.7v-22c0-.73.28-1.22 1.33-1.22h4.61M0 3.2C0 1.43 0 0 2.9 0h12.76v2.23a.27.27 0 01-.3.3H7.72a1.35 1.35 0 00-1.55 1.53v5.88h9v2.34a.29.29 0 01-.33.31H6.17v9.34c0 .9-.46 1.26-1.45 1.24H0V3.2M24.87 0v17.66c0 1.52.22 2.58 1.28 3.19a6 6 0 005.3 0c1-.56 1.37-1.45 1.37-3.21V1.18c0-.75.28-1.18 1.32-1.18h4.61v17.14A6 6 0 0134 23.36a21.62 21.62 0 01-10.21 0c-3.32-1-4.87-3-4.88-6.2V1.19C18.94.42 19.21 0 20.1 0h4.77M137.14 0A2 2 0 00135 1.59l-3.78 16h-.1L127.25 0h-5.34c-1 0-1.36.53-1.36 1.35v21.82h2.26c.36 0 .51-.18.51-.55V4.33h.36l4.82 18.84h3.17c1.19 0 1.63-.49 1.92-1.67l4.34-17.17h.35v18.84h4.21c1 0 1.51-.4 1.51-1.42V0h-6.86M67 12.59h-6v10.58h4.69c.83 0 1.24-.24 1.24-1.22v-9.36"></path>
+            <path fill="#ed1a3b" d="M66.62 8.07a.75.75 0 00.38-.66V0h-4.65C61.32 0 61 .51 61 1.23v11.22l5.59-4.38"></path>
+            <path fill="#231f20" d="M46.27 21.34c2.58-.37 3.43-1.9 3.43-4.15V1.26c0-.95.52-1.26 1.18-1.26h4.76v15.06c0 3.7-.78 5.57-3 7.15C51.52 23 49.53 24 45.2 24a26.66 26.66 0 01-3.72-.17.34.34 0 01-.3-.36v-1.98a34.41 34.41 0 005.09-.15M76 0c-2.9 0-2.91 1.43-2.91 3.2v6a.27.27 0 01-.1.22l-4.07 3.2h4.17v10.55h4.72c1 0 1.44-.34 1.45-1.24v-9.34h8.67a.29.29 0 00.33-.31V9.94h-9V4.06a1.35 1.35 0 011.54-1.53h7.64a.27.27 0 00.3-.3V0H76M7.4 30.12l2.78 6.13 2.57-6.13h1.33l-3.64 8.67a.55.55 0 01-.51.34h-.6l-3.91-8.68a.23.23 0 01.22-.33H7.4M23 38.63a.38.38 0 01-.37.37h-1.55v-9.48a.37.37 0 01.37-.37H23v9.48M76 30.49a.36.36 0 01.37-.37H78v8.51a.38.38 0 01-.37.37H76v-8.51M103.48 32.18l1.85 4.2 1.89-4.2h1.32l-3 6.63a.57.57 0 01-.52.34h-.51l-2.92-6.63a.24.24 0 01.22-.34h1.65M121.35 32.67a.37.37 0 01.37-.36h1.55v6.32a.37.37 0 01-.36.37h-1.56v-6.33M51.43 32.15a2.91 2.91 0 00-1.68.72v-.56H48.2a.36.36 0 00-.36.36V39h1.55a.37.37 0 00.36-.37V34.1a2 2 0 012.83-.1v-1.56a1.68 1.68 0 00-1.15-.29zM16.82 32.15c2.13 0 2.61 1 2.61 1.83v4.65a.37.37 0 01-.37.37H17.5v-.58a2.67 2.67 0 01-1.83.71 1.84 1.84 0 01-2-1.84c0-1.79 2.24-2.46 3.82-2.88a3 3 0 00-.12-1c-.1-.33-.54-.43-.73-.43a6.53 6.53 0 00-2.5.62v-.9a8.62 8.62 0 012.68-.55zm.68 5.32v-2.19c-1.33.43-1.88 1.25-1.88 1.84a.82.82 0 00.73.9 1.41 1.41 0 001.15-.55zM46.14 30.4a3.58 3.58 0 011.32.17v-.86a5.86 5.86 0 00-1.46-.19c-.81 0-2.6.33-2.6 1.91v.88h-1.28v.81h1.25V39h1.55a.37.37 0 00.36-.37v-5.51h1.58v-.81h-1.58v-.45a2.12 2.12 0 01.12-.95 1 1 0 01.74-.51zM34.85 39.15a3.32 3.32 0 01-3.26-3.28c0-2.32 1.48-3.7 3.33-3.68s3 1.43 2.95 3.33h-4.39c0 .91.21 2.3 1.7 2.3A2 2 0 0037 36.43h1a2.83 2.83 0 01-.82 1.63 3.42 3.42 0 01-2.33 1.09zm.81-4.33c0-1.42-.56-1.81-1.14-1.81-.9 0-1 1.23-1 1.81zM60 35.52a3.53 3.53 0 01-3.51 3.6 3.48 3.48 0 113.51-3.6zM56.18 33c-.65.11-1.46 1.11-1 3.4.27 1.5 1 1.93 1.54 1.93s1.21-.81 1.21-2.2c-.04-2.85-1.24-3.24-1.75-3.13zM101.2 35.52a3.53 3.53 0 01-3.51 3.6 3.48 3.48 0 113.51-3.6zM97.42 33c-.65.11-1.47 1.11-1 3.4.27 1.5 1 1.93 1.55 1.93s1.21-.81 1.21-2.2c-.05-2.85-1.26-3.24-1.76-3.13zM131.59 35.52a3.53 3.53 0 01-3.51 3.6 3.48 3.48 0 113.51-3.6zM127.81 33c-.65.11-1.46 1.11-1 3.4.27 1.5 1 1.93 1.55 1.93s1.21-.81 1.21-2.2c-.05-2.85-1.26-3.24-1.76-3.13zM123.37 30.63a1.05 1.05 0 11-1.05-1.05 1 1 0 011.05 1.05zM26.53 32.31V37a.94.94 0 00.93.94c.33 0 .76-.4 1-.83v-4.44a.37.37 0 01.37-.36h1.56v6.32A.38.38 0 0130 39h-1.52v-.63a3.46 3.46 0 01-.8.55 2.06 2.06 0 01-.84.2A2.15 2.15 0 0124.61 37v-4.33a.37.37 0 01.37-.36h1.55M134.71 34.1a2.46 2.46 0 011.33-.74c.39 0 .64.44.64 1V39h1.55a.37.37 0 00.37-.37v-4.42a2 2 0 00-1.93-2 3.18 3.18 0 00-2 .66v-.52h-1.57a.36.36 0 00-.36.36V39h1.56a.38.38 0 00.37-.37zM89.12 34.1a2.46 2.46 0 011.34-.74c.38 0 .63.44.63 1V39h1.56a.37.37 0 00.36-.37v-4.42a2 2 0 00-1.93-2 3.18 3.18 0 00-2 .66v-.52h-1.53a.36.36 0 00-.36.36V39h1.56a.38.38 0 00.37-.37zM81.82 34.1a2.46 2.46 0 011.34-.74c.38 0 .63.44.63 1V39h1.56a.37.37 0 00.36-.37v-4.42a2 2 0 00-1.93-2 3.18 3.18 0 00-2 .66v-.52h-1.53a.36.36 0 00-.36.36V39h1.56a.38.38 0 00.37-.37zM69 32.17a3.68 3.68 0 00-2.27.84 2 2 0 00-1.64-.84 3.18 3.18 0 00-2 .66v-.52h-1.57a.36.36 0 00-.36.36V39h1.56a.38.38 0 00.37-.37V34.1a2.46 2.46 0 011.34-.74c.38 0 .63.44.63 1V39h1.57a.37.37 0 00.36-.37V34.1a2.5 2.5 0 011.34-.74c.39 0 .64.44.64 1V39h1.55a.38.38 0 00.37-.37v-4.42A2 2 0 0069 32.17zM111.6 38a.81.81 0 01-.73-.9c0-.59.55-1.41 1.88-1.84v2.19a1.43 1.43 0 01-1.15.55zm-2.2-5.32v.94a6.48 6.48 0 012.5-.62c.18 0 .63.1.72.43a2.74 2.74 0 01.12 1c-1.57.42-3.81 1.09-3.81 2.88a1.84 1.84 0 002 1.84 2.67 2.67 0 001.83-.71V39h1.56a.38.38 0 00.37-.37V34c0-.83-.48-1.83-2.61-1.83a8.62 8.62 0 00-2.68.53zM116.57 32.29v-1.75a.37.37 0 01.37-.36h1.58v2.11h1.56v.83h-1.56v4.32a.58.58 0 00.1.35.45.45 0 00.4.15 1.79 1.79 0 001.09-.48v1a3.16 3.16 0 01-1.92.73 1.49 1.49 0 01-1.59-1.65v-4.42h-1v-.83h1"></path>
+          </svg>
+        </a>
+      </strong>
+      <div class="contact">
+        <address>
+          <a class="tel_num" href="tel:1577-4793">1577-4793</a>
+        </address>
+        <p class="hours">평일 <time>09:00</time> - <time>18:00</time> / 일요일, 공휴일 휴무</p>
+        <ul class="social_list">
+          <li class="list_item">
+            <a href="#" class="item_link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="social_icon" focusable="false" aria-hidden="true">
+                <path d="M25.68 10.11l-8.14 5.4s3.19 2.16 6.56 4.38a3.21 3.21 0 001.85.53H29v2.34h-3.09a4.71 4.71 0 01-2.86-1c-2.5-1.65-7.47-5-7.47-5l-7.7 5.12a4.28 4.28 0 01-2.64.82H1v-2.27h1.57a3.17 3.17 0 001.86-.6l7.78-5.2S5.84 10.41 5.2 10a2.91 2.91 0 00-1.83-.59h-1.9V7.24h2.34a4.62 4.62 0 012.3.76c.67.4 8.06 5.37 8.06 5.37L22.28 8a4.74 4.74 0 012.54-.72H29v2.29h-1.63a2.59 2.59 0 00-1.69.54z"></path>
+              </svg>
+              <span class="hr_hidden">X.com</span>
+            </a>
+          </li>
+          <li class="list_item">
+            <a href="#" class="item_link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="social_icon" focusable="false" aria-hidden="true">
+                <path d="M25.93 10.46a8 8 0 00-.51-2.67 5.26 5.26 0 00-1.27-1.94 5.26 5.26 0 00-1.94-1.27 8 8 0 00-2.67-.51C18.36 4 18 4 15 4s-3.36 0-4.54.07a8 8 0 00-2.67.51 5.26 5.26 0 00-1.94 1.27 5.26 5.26 0 00-1.27 1.94 8 8 0 00-.51 2.67C4 11.64 4 12 4 15s0 3.36.07 4.54a8 8 0 00.51 2.67 5.26 5.26 0 001.27 1.94 5.26 5.26 0 001.94 1.27 8 8 0 002.67.51C11.64 26 12 26 15 26s3.36 0 4.54-.07a8 8 0 002.67-.51 5.67 5.67 0 003.21-3.21 8 8 0 00.51-2.67C26 18.36 26 18 26 15s0-3.36-.07-4.54zm-2 9a6.22 6.22 0 01-.37 2 3.74 3.74 0 01-2.09 2.09 6.22 6.22 0 01-2 .37C18.29 24 17.94 24 15 24s-3.29 0-4.44-.07a6.22 6.22 0 01-2.05-.37 3.34 3.34 0 01-1.26-.83 3.34 3.34 0 01-.83-1.26 6.22 6.22 0 01-.37-2C6 18.29 6 17.94 6 15s0-3.29.07-4.44a6.22 6.22 0 01.37-2.05 3.34 3.34 0 01.83-1.26 3.34 3.34 0 011.26-.83 6.22 6.22 0 012.05-.37C11.71 6 12.06 6 15 6s3.29 0 4.44.07a6.22 6.22 0 012 .37 3.34 3.34 0 011.26.83 3.34 3.34 0 01.83 1.26 6.22 6.22 0 01.47 2.03v8.88zM15 9.35A5.65 5.65 0 1020.65 15 5.65 5.65 0 0015 9.35zm0 9.32A3.67 3.67 0 1118.67 15 3.67 3.67 0 0115 18.67zm7.19-9.54a1.32 1.32 0 11-1.32-1.32 1.32 1.32 0 011.32 1.32z"></path>
+              </svg>
+              <span class="hr_hidden">Instagram</span>
+            </a>
+          </li>
+          <li class="list_item">
+            <a href="#" class="item_link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="social_icon" focusable="false" aria-hidden="true">
+                <path d="M26.76 10.17a5.21 5.21 0 00-1-2.4 3.48 3.48 0 00-2.41-1C20 6.5 15 6.5 15 6.5s-5 0-8.39.24a3.48 3.48 0 00-2.41 1 5.21 5.21 0 00-1 2.4 36.65 36.65 0 00-.2 3.94v1.83a36.65 36.65 0 00.24 3.91 5.21 5.21 0 001 2.4 4.05 4.05 0 002.65 1c1.92.18 8.16.24 8.16.24s5 0 8.4-.25a3.44 3.44 0 002.41-1 5.21 5.21 0 001-2.4 36.65 36.65 0 00.14-3.9v-1.83a36.65 36.65 0 00-.24-3.91zM12.6 18.05v-6.71l6.4 3.37z"></path>
+              </svg>
+              <span class="hr_hidden">YouTube</span>
+            </a>
+          </li>
+          <li class="list_item">
+            <a href="#" class="item_link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="social_icon" focusable="false" aria-hidden="true">
+                <path d="M20 8.32h-1.81c-1.42 0-1.7.7-1.7 1.73v2.27h3.39l-.44 3.56h-3V25H13v-9.12h-3v-3.56h3V9.7c0-3 1.79-4.7 4.4-4.7a24.15 24.15 0 012.6.14z"></path>
+              </svg>
+              <span class="hr_hidden">Facebook</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <button class="btn_toggle">
+        <svg class="toggle_icon" viewBox="0 0 15 15">
+          <path d="M12 4.5l-4.5 6-4.5-6h9z"></path>
+        </svg>
+        <span class="hr_hidden">회사정보 보기/닫기</span>
+      </button>
+      <div class="info_wrap">
+        <nav>
+          <ul class="f_nav">
+            <li class="list_item"><a href="" class="link_text">회사소개</a></li>
+            <li class="list_item"><a href="" class="link_text">이용약관</a></li>
+            <li class="list_item"><a href="" class="link_text"><b>개인정보처리방침</b></a></li>
+            <li class="list_item"><a href="" class="link_text">사이트맵</a></li>
+            <li class="list_item"><a href="" class="certify link_text">사업자정보확인</a></li>
+            <li class="list_item"><button type="button" class="certify link_text">에스크로 가입확인</button></li>
+          </ul>
+        </nav>
+        <address class="info">
+          상호명: 후지필름일렉트로닉이미징코리아㈜ <br class="m_br">대표자명: 야마모토 마사토<br>
+          사업자등록번호: 120-87-73486 <br class="m_br">통신판매업신고: 2012-서울강남-01006<br>
+          주소: 서울특별시 강남구 선릉로 838, 페코빌딩 3층 <br class="m_br">대표번호: 1577-4793 <br class="m_br">팩스번호: 02-538-8659
+        </address>
+      </div>
+      <p class="copy">© FUJIFILM ELECTRONIC IMAGING KOREA CO., LTD</p>
+    </div>
+  </footer> <!-- main_footer -->
+</div>
+</body>
+</html>
