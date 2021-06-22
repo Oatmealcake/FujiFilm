@@ -8,249 +8,272 @@ const gnbLis = gnbMenu.querySelectorAll('.list_item');
 const btnSearch = document.querySelector('.list_item.search');
 const btnCloseSearch = document.querySelector('.search_box .btn_close');
 const slide = document.querySelector('.staple_item');
+const contBox = document.querySelector('.contents');
+const contBunch = document.querySelectorAll('.contents_list');
 const asideCont = document.querySelector('.contents_aside');
-const contLis = document.querySelectorAll('.contents_list > .list_item');
-const service = document.querySelector('.service');
-const sloganText = document.querySelector('.slogan_p');
+// const service = document.querySelector('.service');
+// const sloganText = document.querySelector('.slogan_p');
 const btnInfoToggle = document.querySelector('.btn_toggle');
 let resizeAlarm = '';
 let scrollAlarm = '';
 
-// subMenu 있을 때 dropdown 클래스 추가
-for (li of gnbLis) {
-  if (li.querySelector('.gnb_sub')) li.classList.add('dropdown');
+window.addEventListener('load', layoutSize);
+window.addEventListener('resize', layoutSize);
+window.addEventListener('resize', resizeTimer);
+// 새로고침시 페이지 상단으로 이동
+window.addEventListener('load', () => {
+  setTimeout (() => scrollTo(0, 0), 100);
+})
+
+setMediaQuery();
+btnSearch.addEventListener('click', actSearch);
+btnCloseSearch.addEventListener('click', closeSearch);
+// 미디어쿼리
+function resizeTimer() {
+  clearTimeout(resizeAlarm);
+  resizeAlarm = setTimeout(setMediaQuery, 100);
 }
-// 공통
-const commonAct = {
-  resizeTimer: function () {
-    clearTimeout(resizeAlarm);
-    resizeAlarm = setTimeout(commonAct.setMediaQuery, 100);
-  },
-  setMediaQuery: function () {
-    if (innerWidth >= 960) {
-      wideAct.start();
-    } else {
-      mobileAct.start();
-    }
-  },
-  // 슬라이드
-  setSlide: function () {
-    const slideItem = document.querySelector('.staple_item .slide');
-    const slideLiElem = document.querySelectorAll('.staple_item .slide .slide_item');
-    const slideIndicator = document.querySelector('.staple_item .indicator');
-    const indicatorAElem = document.querySelectorAll('.staple_item .indicator .item_link');
-    const slideControlBtn = document.querySelectorAll('.staple_item .btn_control');
-    let slideNow = 0;
-    let slideNext = 0;
-    let slideFirst = 0;
-    let timerId = '';
-    let isTimerOn = true;
-    let timerSpeed = 3000;
-  
-    slideIndicator.addEventListener('click', slideActive);
-  
-    for (btn of slideControlBtn) {
-      // 자동재생중일 경우와 아닐경우
-      if (isTimerOn === true) {
-        btn.classList.remove('on');
-        if (btn.classList.contains('stop')) btn.classList.add('on');
-      } else {
-        btn.classList.remove('on');
-        if (btn.classList.contains('play')) btn.classList.add('on');
-      }
-      // 재생, 멈춤 버튼
-      btn.addEventListener('click', playControl);
-    }
-    function playControl(ev) {
-      if (isTimerOn === true) {
-        clearTimeout(timerId);
-        ev.target.classList.remove('on');
-        for (btn of slideControlBtn) {
-          if (btn.classList.contains('play')) btn.classList.add('on');
-        }
-        isTimerOn = false;
-      } else {
-        timerId = setTimeout(() => showSlide(slideNext), timerSpeed);
-        ev.target.classList.remove('on');
-        for (btn of slideControlBtn) {
-          if (btn.classList.contains('stop')) btn.classList.add('on');
-        }
-        isTimerOn = true;
-      }
-    }
-    // 인디케이터 - 클릭된 것의 인덱스를 찾아 보여주기
-    function slideActive(ev) {
-      ev.preventDefault();
-      if (ev.target.tagName !== 'A') return;
-      for (let i = 0; i < indicatorAElem.length; i++) {
-        if (indicatorAElem[i] === ev.target) {
-          let num = i;
-          showSlide(num);
-        }
-      }
-    }
-    // index번째의 슬라이드 보여주기
-    function showSlide(index) {
-      for (let i = 0; i < indicatorAElem.length; i++) {
-        // 모든 on 지우기
-        indicatorAElem[i].classList.remove('on');
-        slideLiElem[i].classList.remove('on');
-      }
-      // index번째에 on 붙이기
-      indicatorAElem[index].classList.add('on');
-      slideLiElem[index].classList.add('on');
-      // 현재와 다음 슬라이드 넘버링
-      slideNow = index;
-      slideNext = (slideNow === (indicatorAElem.length - 1)) ? 0 : (slideNow + 1);
-      // console.log(slideNow, slideNext);
-      // 자동재생 타이머 걸기
-      if (isTimerOn === true) {
-        clearTimeout(timerId);
-        timerId = setTimeout(() => showSlide(slideNext), timerSpeed);
-      }
-    }
-    // 첫번째 슬라이드를 기본으로 시작
-    showSlide(slideFirst);
-  },
-  // 검색
-  actSearch: function (ev) {
-    if (ev.target.parentNode.parentNode !== btnSearch) return;
-    btnSearch.classList.add('active');
-    dimmedLayer.classList.add('active');
-    bodyElem.classList.add('prevent_scroll');
-  },
-  closeSearch: function (ev) {
-    if (ev.target.parentNode !== btnCloseSearch) return;
-    btnSearch.classList.remove('active'); 
-    dimmedLayer.classList.remove('active');
-    bodyElem.classList.remove('prevent_scroll');
-  },
-  // msnry 레이아웃
-  contentsLayout: function () {
-    var elem = document.querySelectorAll('.contents_list');
-    for (item of elem) {
-      var msnry = new Masonry(item, {
-        // options
-        itemSelector: '.contents_list > .list_item',
-        columnWidth: '.contents_list > .list_item',
-        percentPosition: true,
-        horizontalOrder: true
-      });
-    }
-  },
-  // 컨텐츠 애니메이션
-  scrollEffect: function () {
-    clearTimeout(scrollAlarm);
-    scrollAlarm = setTimeout(commonAct.showCont, 70);
-  },
-  showCont: function () {
-    for (let li of contLis) {
-      if (htmlElem.scrollTop > (li.parentNode.offsetTop + li.offsetTop - window.innerHeight)) {
-        li.style.transform = 'translateY(0)';
-        li.style.visibility = 'visible';
-        li.style.opacity = '1';
-      }
-    }
-  },
-  start: function () {
-    window.addEventListener('resize', commonAct.resizeTimer);
-    window.addEventListener('scroll', commonAct.scrollEffect);
-    btnSearch.addEventListener('click', commonAct.actSearch);
-    btnCloseSearch.addEventListener('click', commonAct.closeSearch);
-    commonAct.setMediaQuery();
-    commonAct.setSlide();
-    commonAct.contentsLayout();
-    commonAct.showCont();
-  }
-}
-// 모바일
-const mobileAct = {
-  // 햄버거버튼
-  mOpenMenu: function () {
-    if (btnHam.classList.contains('on')) {
-      btnHam.classList.remove('on');
-      mainHeader.classList.remove('hidden');
-      dimmedLayer.classList.remove('active');
-      bodyElem.classList.remove('prevent_scroll');
-    } else {
-      btnHam.classList.add('on');
-      mainHeader.classList.add('hidden');
-      dimmedLayer.classList.add('active');
-      bodyElem.classList.add('prevent_scroll');
-    }
-  },
-  // 서브메뉴
-  mOpenSub: function (ev) {
-    ev.preventDefault();
-    const targetLi = ev.target.parentNode;
-    if (!targetLi.classList.contains('dropdown')) return;
-    if (targetLi.classList.contains('on')) targetLi.classList.remove('on');
-    else {
-      for (li of gnbLis) {
-        li.classList.remove('on');
-      }
-      targetLi.classList.add('on');
-    }
-  },
-  mShowFInfo: function () {
-    this.classList.toggle('on');
-  },
-  start: function () {
-    // wide 제거
-    window.removeEventListener('scroll', wideAct.wideScroll);
-    for (let li of gnbLis) {
-      if (!li.classList.contains('dropdown')) break;
-      li.removeEventListener('mouseenter', wideAct.wideOpenSub);
-      li.removeEventListener('mouseleave', wideAct.wideCloseSub);
-    }
-    slide.classList.remove('fix');
-    slide.style.top = 'auto';
-    // mobile
-    btnHam.addEventListener('click', mobileAct.mOpenMenu);
-    gnbMenu.addEventListener('click', mobileAct.mOpenSub);
-    btnInfoToggle.addEventListener('click', mobileAct.mShowFInfo);
-  }
-}
-// pc
-const wideAct = {
-  // 슬라이드 픽스
-  wideScroll: function () {
-    let diff = asideCont.offsetHeight - slide.offsetHeight;
-    if (htmlElem.scrollTop > diff) {
-      slide.classList.add('fix');
-      slide.style.top = diff + asideCont.offsetTop + 'px';
-    } else {
-      slide.classList.remove('fix');
-      slide.style.top = 'auto';
-    }
-  },
-  // 서브 메뉴
-  wideOpenSub: function () {
-    this.classList.add('on');
-    dimmedLayer.classList.add('active');
-  },
-  wideCloseSub: function () {
-    this.classList.remove('on');
-    dimmedLayer.classList.remove('active');
-  },
-  start: function () {
-    // mobile 제거
-    btnHam.removeEventListener('click', mobileAct.mOpenMenu);
-    gnbMenu.removeEventListener('click', mobileAct.mOpenSub);
-    btnInfoToggle.removeEventListener('click', mobileAct.mShowFInfo);
+function setMediaQuery() {
+  if (innerWidth >= 960) {
+    // mobile 이벤트 제거
+    btnHam.removeEventListener('click', mOpenMenu);
+    gnbMenu.removeEventListener('click', mOpenSub);
+    btnInfoToggle.removeEventListener('click', mShowFInfo);
     btnHam.classList.remove('on');
     mainHeader.classList.remove('hidden');
     dimmedLayer.classList.remove('active');
     bodyElem.classList.remove('prevent_scroll');
-    // wide
-    wideAct.wideScroll();
-    window.addEventListener('scroll', wideAct.wideScroll);
+    // wide 이벤트 붙이기
+    window.addEventListener('load', slideFix);
+    window.addEventListener('scroll', slideFix);
     for (let li of gnbLis) {
       if (!li.classList.contains('dropdown')) break;
       li.classList.remove('on');
-      li.addEventListener('mouseenter', wideAct.wideOpenSub);
-      li.addEventListener('mouseleave', wideAct.wideCloseSub);
+      li.addEventListener('mouseenter', wideOpenSub);
+      li.addEventListener('mouseleave', wideCloseSub);
     }
+  } else {
+    // wide 이벤트 제거
+    window.removeEventListener('load', slideFix);
+    window.removeEventListener('scroll', slideFix);
+    for (let li of gnbLis) {
+      if (!li.classList.contains('dropdown')) break;
+      li.removeEventListener('mouseenter', wideOpenSub);
+      li.removeEventListener('mouseleave', wideCloseSub);
+    }
+    slide.classList.remove('fix');
+    slide.style.top = 'auto';
+    // mobile 이벤트 붙이기
+    btnHam.addEventListener('click', mOpenMenu);
+    gnbMenu.addEventListener('click', mOpenSub);
+    btnInfoToggle.addEventListener('click', mShowFInfo);
   }
 }
-commonAct.start();
+
+// 헤더
+// c - subMenu 있을 때 dropdown 클래스 추가
+for (li of gnbLis) {
+  if (li.querySelector('.gnb_sub')) li.classList.add('dropdown');
+}
+// c - 검색
+function actSearch(ev) {
+  if (ev.target.parentNode.parentNode !== btnSearch) return;
+  btnSearch.classList.add('active');
+  dimmedLayer.classList.add('active');
+  bodyElem.classList.add('prevent_scroll');
+}
+function closeSearch(ev) {
+  if (ev.target.parentNode !== btnCloseSearch) return;
+  btnSearch.classList.remove('active'); 
+  dimmedLayer.classList.remove('active');
+  bodyElem.classList.remove('prevent_scroll');
+}
+// m - 햄버거버튼
+function mOpenMenu() {
+  if (btnHam.classList.contains('on')) {
+    btnHam.classList.remove('on');
+    mainHeader.classList.remove('hidden');
+    dimmedLayer.classList.remove('active');
+    bodyElem.classList.remove('prevent_scroll');
+  } else {
+    btnHam.classList.add('on');
+    mainHeader.classList.add('hidden');
+    dimmedLayer.classList.add('active');
+    bodyElem.classList.add('prevent_scroll');
+  }
+}
+// m - 서브메뉴
+function mOpenSub(ev) {
+  ev.preventDefault();
+  const targetLi = ev.target.parentNode;
+  if (!targetLi.classList.contains('dropdown')) return;
+  if (targetLi.classList.contains('on')) targetLi.classList.remove('on');
+  else {
+    for (li of gnbLis) {
+      li.classList.remove('on');
+    }
+    targetLi.classList.add('on');
+  }
+}
+// m - 푸터 정보 더보기
+function mShowFInfo() {
+  this.classList.toggle('on');
+}
+// w - 서브 메뉴
+function wideOpenSub() {
+  this.classList.add('on');
+  dimmedLayer.classList.add('active');
+}
+function wideCloseSub() {
+  this.classList.remove('on');
+  dimmedLayer.classList.remove('active');
+}
+
+// 본문 컨테이너
+// c - 콘텐츠 레이아웃
+function layoutSize() {
+  if (innerWidth >= 720 && innerWidth < 960) {
+    console.log('mobile')
+    setLayout(contBunch[0], 2, 50);
+    setLayout(contBunch[1], 2, 50);
+  } else if (innerWidth >= 960 && innerWidth < 1199) { 
+    console.log('medium')
+    setLayout(contBunch[0], 2, 50);
+    setLayout(contBunch[1], 3, 50, 80);
+  } else if (innerWidth >= 1200) { 
+    console.log('wide')
+    setLayout(contBunch[0], 2, 50);
+    setLayout(contBunch[1], 3, 50, 130);
+  } else {
+    contBox.style.height = 'auto';
+    contBunch[0].style.height = 'auto';
+    contBunch[1].style.height = 'auto';
+  }
+}
+function setLayout(item, column, marginBottom, brunchMargin=0) {
+  let contLis = item.querySelectorAll('.list_item');
+  let num = column;
+  let margin = marginBottom;
+  let addHeight = [];
+  let totalHeight = 0;
+  // num 값만큼 배열의 공간 생성
+  for (let j = 0; j < num; j++) {
+    addHeight[j] = 0
+  }
+  for (let k = 0; k < contLis.length; k++) {
+    console.log(contLis[k]);
+    console.log(contLis[k].offsetWidth);
+    console.log(contLis[k].offsetHeight);
+    console.log(contLis[k].offsetTop);
+    // console.log(contLis[k]);
+    // left값 지정
+    if (k % num !== 0) contLis[k].style.left = contLis[k - 1].offsetLeft + contLis[k - 1].offsetWidth + 'px';
+    else contLis[k].style.left = 0 + 'px';
+    // top값 지정
+    if (k >= num) contLis[k].style.top = contLis[k - num].offsetTop + contLis[k - num].offsetHeight + margin + 'px';
+    else contLis[k].style.top = 0 + 'px';
+    // 각 열의 높이 구하기
+    for (let j = 0; j < num; j++) {
+      if (k % num === j) addHeight[j] = addHeight[j] + contLis[k].offsetHeight + margin;
+    }
+  }
+  // height 지정
+  // console.log(addHeight);
+  item.style.height = `${Math.max.apply(null, addHeight)}px`;
+  // 2번째 이상의 contBrunch의 top값 조정과 contBox의 height 지정
+  for (let i = 0; i < contBunch.length; i++) {
+    if (i !== 0) contBunch[i].style.top = `${contBunch[i - 1].offsetHeight + brunchMargin}px`;
+    totalHeight += contBunch[i].offsetHeight;
+  }
+  contBox.style.height = `${totalHeight + brunchMargin}px`;
+}
+// c - 슬라이드
+setSlide();
+function setSlide() {
+  const slideLiElem = document.querySelectorAll('.staple_item .slide .slide_item');
+  const slideIndicator = document.querySelector('.staple_item .indicator');
+  const indicatorAElem = document.querySelectorAll('.staple_item .indicator .item_link');
+  const slideControlBtn = document.querySelectorAll('.staple_item .btn_control');
+  let slideNow = 0;
+  let slideNext = 0;
+  let slideFirst = 0;
+  let timerId = '';
+  let isTimerOn = true;
+  let timerSpeed = 3000;
+
+  slideIndicator.addEventListener('click', slideActive);
+
+  for (btn of slideControlBtn) {
+    // 자동재생중일 경우와 아닐경우
+    if (isTimerOn === true) {
+      btn.classList.remove('on');
+      if (btn.classList.contains('stop')) btn.classList.add('on');
+    } else {
+      btn.classList.remove('on');
+      if (btn.classList.contains('play')) btn.classList.add('on');
+    }
+    // 재생, 멈춤 버튼
+    btn.addEventListener('click', playControl);
+  }
+  function playControl(ev) {
+    if (isTimerOn === true) {
+      clearTimeout(timerId);
+      ev.target.classList.remove('on');
+      for (btn of slideControlBtn) {
+        if (btn.classList.contains('play')) btn.classList.add('on');
+      }
+      isTimerOn = false;
+    } else {
+      timerId = setTimeout(() => showSlide(slideNext), timerSpeed);
+      ev.target.classList.remove('on');
+      for (btn of slideControlBtn) {
+        if (btn.classList.contains('stop')) btn.classList.add('on');
+      }
+      isTimerOn = true;
+    }
+  }
+  // 인디케이터 - 클릭된 것의 인덱스를 찾아 보여주기
+  function slideActive(ev) {
+    ev.preventDefault();
+    if (ev.target.tagName !== 'A') return;
+    for (let i = 0; i < indicatorAElem.length; i++) {
+      if (indicatorAElem[i] === ev.target) {
+        let num = i;
+        showSlide(num);
+      }
+    }
+  }
+  // index번째의 슬라이드 보여주기
+  function showSlide(index) {
+    for (let i = 0; i < indicatorAElem.length; i++) {
+      // 모든 on 지우기
+      indicatorAElem[i].classList.remove('on');
+      slideLiElem[i].classList.remove('on');
+    }
+    // index번째에 on 붙이기
+    indicatorAElem[index].classList.add('on');
+    slideLiElem[index].classList.add('on');
+    // 현재와 다음 슬라이드 넘버링
+    slideNow = index;
+    slideNext = (slideNow === (indicatorAElem.length - 1)) ? 0 : (slideNow + 1);
+    // console.log(slideNow, slideNext);
+    // 자동재생 타이머 걸기
+    if (isTimerOn === true) {
+      clearTimeout(timerId);
+      timerId = setTimeout(() => showSlide(slideNext), timerSpeed);
+    }
+  }
+  // 첫번째 슬라이드를 기본으로 시작
+  showSlide(slideFirst);
+}
+// w - 슬라이드 픽스
+function slideFix() {
+  let diff = asideCont.offsetHeight - slide.offsetHeight;
+  if (htmlElem.scrollTop > diff) {
+    slide.classList.add('fix');
+    slide.style.top = diff + asideCont.parentNode.offsetTop + 'px';
+  } else {
+    slide.classList.remove('fix');
+    slide.style.top = 'auto';
+  }
+}
