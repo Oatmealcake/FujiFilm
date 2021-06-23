@@ -133,15 +133,12 @@ function wideCloseSub() {
 // c - 콘텐츠 레이아웃
 function layoutSize() {
   if (innerWidth >= 720 && innerWidth < 960) {
-    console.log('mobile')
     setLayout(contBunch[0], 2, 50);
     setLayout(contBunch[1], 2, 50);
   } else if (innerWidth >= 960 && innerWidth < 1199) { 
-    console.log('medium')
     setLayout(contBunch[0], 2, 50);
     setLayout(contBunch[1], 3, 50, 80);
   } else if (innerWidth >= 1200) { 
-    console.log('wide')
     setLayout(contBunch[0], 2, 50);
     setLayout(contBunch[1], 3, 50, 130);
   } else {
@@ -161,11 +158,6 @@ function setLayout(item, column, marginBottom, brunchMargin=0) {
     addHeight[j] = 0
   }
   for (let k = 0; k < contLis.length; k++) {
-    console.log(contLis[k]);
-    console.log(contLis[k].offsetWidth);
-    console.log(contLis[k].offsetHeight);
-    console.log(contLis[k].offsetTop);
-    // console.log(contLis[k]);
     // left값 지정
     if (k % num !== 0) contLis[k].style.left = contLis[k - 1].offsetLeft + contLis[k - 1].offsetWidth + 'px';
     else contLis[k].style.left = 0 + 'px';
@@ -178,7 +170,6 @@ function setLayout(item, column, marginBottom, brunchMargin=0) {
     }
   }
   // height 지정
-  // console.log(addHeight);
   item.style.height = `${Math.max.apply(null, addHeight)}px`;
   // 2번째 이상의 contBrunch의 top값 조정과 contBox의 height 지정
   for (let i = 0; i < contBunch.length; i++) {
@@ -256,7 +247,6 @@ function setSlide() {
     // 현재와 다음 슬라이드 넘버링
     slideNow = index;
     slideNext = (slideNow === (indicatorAElem.length - 1)) ? 0 : (slideNow + 1);
-    // console.log(slideNow, slideNext);
     // 자동재생 타이머 걸기
     if (isTimerOn === true) {
       clearTimeout(timerId);
