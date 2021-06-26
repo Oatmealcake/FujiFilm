@@ -5,31 +5,26 @@ const btnHam = document.querySelector('.btn_ham');
 const dimmedLayer = document.querySelector('.dimmed_layer');
 const gnbMenu = document.querySelector('.gnb_list');
 const gnbLis = gnbMenu.querySelectorAll('.list_item');
+const gnbLine = document.querySelector('.gnb_line');
 const btnSearch = document.querySelector('.list_item.search');
 const btnCloseSearch = document.querySelector('.search_box .btn_close');
 const slide = document.querySelector('.staple_item');
 const contBox = document.querySelector('.contents');
 const contBunch = document.querySelectorAll('.contents_list');
 const asideCont = document.querySelector('.contents_aside');
-// const service = document.querySelector('.service');
-// const sloganText = document.querySelector('.slogan_p');
 const btnInfoToggle = document.querySelector('.btn_toggle');
-let resizeAlarm = '';
-let scrollAlarm = '';
 
 window.addEventListener('load', layoutSize);
 window.addEventListener('resize', layoutSize);
 window.addEventListener('resize', resizeTimer);
-// 새로고침시 페이지 상단으로 이동
-window.addEventListener('load', () => {
-  setTimeout (() => scrollTo(0, 0), 100);
-})
-
 setMediaQuery();
+setSlide();
 btnSearch.addEventListener('click', actSearch);
 btnCloseSearch.addEventListener('click', closeSearch);
+
 // 미디어쿼리
 function resizeTimer() {
+  let resizeAlarm = '';
   clearTimeout(resizeAlarm);
   resizeAlarm = setTimeout(setMediaQuery, 100);
 }
@@ -45,9 +40,9 @@ function setMediaQuery() {
     bodyElem.classList.remove('prevent_scroll');
     // wide 이벤트 붙이기
     window.addEventListener('load', slideFix);
+    window.addEventListener('resize', slideFix);
     window.addEventListener('scroll', slideFix);
     for (let li of gnbLis) {
-      if (!li.classList.contains('dropdown')) break;
       li.classList.remove('on');
       li.addEventListener('mouseenter', wideOpenSub);
       li.addEventListener('mouseleave', wideCloseSub);
@@ -57,7 +52,6 @@ function setMediaQuery() {
     window.removeEventListener('load', slideFix);
     window.removeEventListener('scroll', slideFix);
     for (let li of gnbLis) {
-      if (!li.classList.contains('dropdown')) break;
       li.removeEventListener('mouseenter', wideOpenSub);
       li.removeEventListener('mouseleave', wideCloseSub);
     }
@@ -121,36 +115,43 @@ function mShowFInfo() {
 }
 // w - 서브 메뉴
 function wideOpenSub() {
+  const gnbTit = this.querySelector('.gnb_tit');
+  let compStyles = window.getComputedStyle(gnbTit).paddingRight.split('px')[0];
+  gnbLine.style.width = gnbTit.offsetWidth - compStyles + 'px';
+  gnbLine.style.transform = `translateX(${gnbTit.offsetLeft}px)`;
+  if (!this.classList.contains('dropdown')) return;
   this.classList.add('on');
   dimmedLayer.classList.add('active');
 }
 function wideCloseSub() {
+  gnbLine.style.width = '0';
+  gnbLine.style.transform = 'translateX(0)';
+  if (!this.classList.contains('dropdown')) return;
   this.classList.remove('on');
   dimmedLayer.classList.remove('active');
 }
 
 // 본문 컨테이너
-// c - 콘텐츠 레이아웃
+// c - 미디어 너비 별 레이아웃
 function layoutSize() {
   if (innerWidth >= 720 && innerWidth < 960) {
-    setLayout(contBunch[0], 2, 50);
-    setLayout(contBunch[1], 2, 50);
+    setLayout(contBunch[0], 2);
+    setLayout(contBunch[1], 2);
   } else if (innerWidth >= 960 && innerWidth < 1199) { 
-    setLayout(contBunch[0], 2, 50);
-    setLayout(contBunch[1], 3, 50, 80);
+    setLayout(contBunch[0], 2);
+    setLayout(contBunch[1], 3, 80);
   } else if (innerWidth >= 1200) { 
-    setLayout(contBunch[0], 2, 50);
-    setLayout(contBunch[1], 3, 50, 130);
+    setLayout(contBunch[0], 2);
+    setLayout(contBunch[1], 3, 130);
   } else {
     contBox.style.height = 'auto';
     contBunch[0].style.height = 'auto';
     contBunch[1].style.height = 'auto';
   }
 }
-function setLayout(item, column, marginBottom, brunchMargin=0) {
+// c - 핀터레스트 레이아웃
+function setLayout(item, num, brunchMargin=0) {
   let contLis = item.querySelectorAll('.list_item');
-  let num = column;
-  let margin = marginBottom;
   let addHeight = [];
   let totalHeight = 0;
   // num 값만큼 배열의 공간 생성
@@ -162,11 +163,11 @@ function setLayout(item, column, marginBottom, brunchMargin=0) {
     if (k % num !== 0) contLis[k].style.left = contLis[k - 1].offsetLeft + contLis[k - 1].offsetWidth + 'px';
     else contLis[k].style.left = 0 + 'px';
     // top값 지정
-    if (k >= num) contLis[k].style.top = contLis[k - num].offsetTop + contLis[k - num].offsetHeight + margin + 'px';
+    if (k >= num) contLis[k].style.top = contLis[k - num].offsetTop + contLis[k - num].offsetHeight + 'px';
     else contLis[k].style.top = 0 + 'px';
     // 각 열의 높이 구하기
     for (let j = 0; j < num; j++) {
-      if (k % num === j) addHeight[j] = addHeight[j] + contLis[k].offsetHeight + margin;
+      if (k % num === j) addHeight[j] = addHeight[j] + contLis[k].offsetHeight;
     }
   }
   // height 지정
@@ -179,7 +180,6 @@ function setLayout(item, column, marginBottom, brunchMargin=0) {
   contBox.style.height = `${totalHeight + brunchMargin}px`;
 }
 // c - 슬라이드
-setSlide();
 function setSlide() {
   const slideLiElem = document.querySelectorAll('.staple_item .slide .slide_item');
   const slideIndicator = document.querySelector('.staple_item .indicator');
