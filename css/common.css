@@ -293,12 +293,12 @@ body.prevent_scroll {overflow: hidden;}
   .main_header .nav_wrap .gnb .sub_wrap {position: absolute; top: 70px; left: -41px; width: 594px; height: 370px; padding: 44px 270px 0 0; box-sizing: border-box; background-color: #fff; text-align: center;}
   .main_header .nav_wrap .gnb .gnb_sub_tit {display: block; font-size: 2.8rem; font-weight: 800; text-transform: uppercase;}
   .main_header .nav_wrap .gnb_sub .sub_tit {line-height: 37px;}
-  .main_header .nav_wrap .gnb_sub_banner {display: block; position: absolute; top: 0; right: 0; bottom: 0; width: 270px; padding-top: 60px; background-color: #f0f0f0;}
+  .main_header .nav_wrap .gnb_sub_banner {display: block; position: absolute; top: 0; right: 0; bottom: 0; width: 270px; padding-top: 60px; background-color: #f0f0f0; color: initial;}
   .main_header .nav_wrap .gnb_sub_banner:hover .link_text, .main_header .nav_wrap .gnb_sub_banner:focus .link_text {background-size: 100% 100%; color: #029570;}
   .main_header .nav_wrap .gnb_sub_banner:hover .banner_deco, .main_header .nav_wrap .gnb_sub_banner:focus .banner_deco {top: 48px; width: 24px; height: 24px;}
   .main_header .nav_wrap .gnb_sub_banner .banner_img {display: block; width: 150px; margin: 0 auto 18px;}
   .main_header .nav_wrap .gnb_sub_banner .banner_desc {font-size: 1.4rem; line-height: 1.5;}
-  .main_header .nav_wrap .gnb_sub_banner .model {font-size: 1.8rem; line-height: 1.4;}
+  .main_header .nav_wrap .gnb_sub_banner .model {color: initial; font-size: 1.8rem; line-height: 1.4;}
   .main_header .nav_wrap .gnb_sub_banner .banner_deco {position: absolute; top: 45px; left: 50%; transform: translateX(-50%); width: 30px; height: 30px; transition: all 0.3s ease;}
   .main_header .nav_wrap .gnb_sub_banner .banner_deco:before {content: ''; position: absolute; top: 0; left: 0; width: 8px; height: 8px; border: 1px solid transparent; border-color: #000 transparent transparent #000;}
   .main_header .nav_wrap .gnb_sub_banner .banner_deco:after {content: ''; position: absolute; top: 0; right: 0; width: 8px; height: 8px; border: 1px solid transparent; border-color: #000 #000 transparent transparent;}

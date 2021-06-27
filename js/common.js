@@ -14,11 +14,14 @@ const contBunch = document.querySelectorAll('.contents_list');
 const asideCont = document.querySelector('.contents_aside');
 const btnInfoToggle = document.querySelector('.btn_toggle');
 
-window.addEventListener('load', layoutSize);
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
+  layoutSize();
+  setMediaQuery();
+})
+setSlide();
 window.addEventListener('resize', layoutSize);
 window.addEventListener('resize', resizeTimer);
-setMediaQuery();
-setSlide();
 btnSearch.addEventListener('click', actSearch);
 btnCloseSearch.addEventListener('click', closeSearch);
 
@@ -39,7 +42,7 @@ function setMediaQuery() {
     dimmedLayer.classList.remove('active');
     bodyElem.classList.remove('prevent_scroll');
     // wide 이벤트 붙이기
-    window.addEventListener('load', slideFix);
+    slideFix();
     window.addEventListener('resize', slideFix);
     window.addEventListener('scroll', slideFix);
     for (let li of gnbLis) {
@@ -49,7 +52,7 @@ function setMediaQuery() {
     }
   } else {
     // wide 이벤트 제거
-    window.removeEventListener('load', slideFix);
+    window.removeEventListener('resize', slideFix);
     window.removeEventListener('scroll', slideFix);
     for (let li of gnbLis) {
       li.removeEventListener('mouseenter', wideOpenSub);
