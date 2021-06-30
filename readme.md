@@ -18,7 +18,7 @@
 | :--------------------------------------------------: | :--------------------------------------------------: |
 | ![작은화면에서의 헤더](./readmeimg/mobileHeader.gif) | ![작은화면에서의 푸터](./readmeimg/mobileFooter.gif) |
 |                   헤더 애니메이션                    |                스크롤시 슬라이드 고정                |
-|  ![넓은화면에서의 헤더](./readmeimg/WideHeader.gif)  | ![넓은화면에서의 슬라이드](./readmeimg/slideFix.gif) |
+|  ![넓은화면에서의 헤더](./readmeimg/wideHeader.gif)  | ![넓은화면에서의 슬라이드](./readmeimg/slideFix.gif) |
 
 ## 구현 방식
 
