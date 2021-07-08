@@ -25,7 +25,7 @@ button {border: 0; background-color: transparent; cursor: pointer; font: inherit
 br {letter-spacing: 0;}
 
 body {font-size: 1.6rem; min-width: 297px;}
-.hr_hidden {position: absolute; clip: rect(0, 0, 0, 0); width: 1px; height: 1px; margin: -1px; overflow: hidden;}
+.ir_hidden {position: absolute; clip: rect(0, 0, 0, 0); width: 1px; height: 1px; margin: -1px; overflow: hidden;}
 .fuji_logo {width: 120px;}
 .link_text {position: relative; background-image: linear-gradient(transparent calc(100% - 1px), #029570 1px); background-repeat: no-repeat; background-size: 0 100%; transition: background-size .3s;}
 .link_text:hover, .link_text:focus {background-size: 100% 100%; color: #029570;}
